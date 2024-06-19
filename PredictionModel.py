@@ -96,3 +96,14 @@ plt.xlabel('Time')
 plt.ylabel('Google Stock Price')
 plt.legend()
 plt.show()
+
+# Calculating performance metrics
+rmse = np.sqrt(np.mean((predicted_stock_price - real_stock_price) ** 2))
+print('Root Mean Squared Error:', rmse)
+
+mae = np.mean(np.abs(predicted_stock_price - real_stock_price))
+print('Mean Absolute Error:', mae)
+
+from sklearn.metrics import r2_score
+r2 = r2_score(real_stock_price, predicted_stock_price)
+print('R-squared:', r2)
